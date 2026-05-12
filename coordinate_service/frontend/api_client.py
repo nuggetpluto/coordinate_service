@@ -1,9 +1,11 @@
 import requests
 
 
-BASE_URL = "https://coordinate-service.onrender.com"
+API_URL = "https://coordinate-service.onrender.com"
+
+
 def get_systems():
-    response = requests.get(f"{BASE_URL}/systems")
+    response = requests.get(f"{API_URL}/systems", timeout=60)
 
     if response.status_code != 200:
         raise Exception("Ошибка получения систем координат")
@@ -22,9 +24,10 @@ def transform_file(system_from, system_to, file):
     }
 
     response = requests.post(
-        f"{BASE_URL}/transform",
+        f"{API_URL}/transform",
         files=files,
-        data=data
+        data=data,
+        timeout=120
     )
 
     if response.status_code != 200:
