@@ -22,8 +22,8 @@ except ModuleNotFoundError:
     from report_generator import generate_report
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PARAM_FILE = os.path.join(BASE_DIR, "backend", "parameters.json")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PARAM_FILE = os.path.join(BASE_DIR, "parameters.json")
 UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
