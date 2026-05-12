@@ -7,12 +7,12 @@ from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 try:
-    from backend.coordinate_transformer import (
+    from coordinate_transformer import (
         transform_coordinates,
         get_available_systems,
         load_parameters
     )
-    from backend.report_generator import generate_report
+    from report_generator import generate_report
 except ModuleNotFoundError:
     from coordinate_transformer import (
         transform_coordinates,
