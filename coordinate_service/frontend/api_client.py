@@ -2,7 +2,7 @@ import time
 import requests
 
 
-API_URL = "https://coordinate-service.onrender.com"
+API_URL = "https://coordinate-service-backend.onrender.com"
 
 
 def get_systems():
