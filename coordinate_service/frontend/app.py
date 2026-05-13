@@ -53,12 +53,13 @@ st.write(
     "между различными геодезическими системами координат."
 )
 
-try:
-    systems = get_systems()
+with st.spinner("Подключение к backend. Если сервис спал, запуск может занять до минуты..."):
+    try:
+        systems = get_systems()
 
-except Exception as error:
-    st.error(f"Ошибка подключения к backend: {error}")
-    st.stop()
+    except Exception as error:
+        st.error(f"Ошибка подключения к backend: {error}")
+        st.stop()
 
 
 st.subheader("Параметры преобразования")
